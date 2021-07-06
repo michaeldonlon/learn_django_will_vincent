@@ -22,7 +22,7 @@ class HomepageTests(SimpleTestCase):
         self.assertContains(self.response, 'Homepage')
     
     def test_homepage_does_not_contain_incorrect_html(self):
-        self.assertNotContains(self.response, 'Here\'s some incorrect text.')
+        self.assertNotContains(self.response, "I don't belong here.")
 
     def test_homepage_url_resolves_homepageview(self):
         view = resolve('/')
