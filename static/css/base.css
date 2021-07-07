@@ -1,0 +1,12 @@
+/* static/css/base.css */
+h1 {
+  color: indianred;
+}
+
+.swallowpic {
+  height: 300px;
+  width: auto;
+  margin: 20px;
+  padding: 3px;
+  background-color: indianred;
+}

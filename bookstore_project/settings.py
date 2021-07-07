@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # third party apps
+    'crispy_forms',
+
     # local apps
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
@@ -129,9 +132,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+# The collectstatic command will compile static files here:
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Where collectstatic will look for static files:
+# This is the default but is good practice to make explicit
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
 
+# My custom user model
 AUTH_USER_MODEL = 'users.CustomUser'
 
+# Both login and logout redirect back to homepage
 LOGIN_REDIRECT_URL = 'home'
-
 LOGOUT_REDIRECT_URL = 'home'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
