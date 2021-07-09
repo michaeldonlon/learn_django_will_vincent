@@ -6,7 +6,15 @@ h1 {
 .swallowpic {
   height: 300px;
   width: auto;
-  margin: 20px;
+  margin: 5px;
   padding: 3px;
+  background-color: indianred;
+}
+
+.swallowthumb {
+  height: 20px;
+  width: 20px;
+  margin: 2px;
+  padding: 1px;
   background-color: indianred;
 }
