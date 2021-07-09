@@ -193,3 +193,13 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_UNIQUE_EMAIL = True
 
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+
+DEFAULT_FROM_EMAIL = 'common_creed@hotmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+TIME_ZONE = 'Australia/Melbourne'

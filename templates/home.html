@@ -1,7 +1,9 @@
 <!-- templates/home.html -->
 {% extends '_base.html' %}
+
 {% load static %}
 {% load socialaccount %}
+{% load i18n %}
 
 
 {% block title %}Home{% endblock title %}
@@ -19,6 +21,8 @@
   <a href="{% url 'account_signup' %}">Sign Up</a>
   <br>
   <p> OR <br>
-  <a href="{% provider_login_url 'github' %}">Sign in with GitHub</a></p>
+  Log in with your <a href="{% provider_login_url 'github' %}">GitHub</a> account</p>
+  <br>
+  <a href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
 {% endif %}
 {% endblock content %}
