@@ -150,6 +150,9 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # My custom user model
 AUTH_USER_MODEL = 'users.CustomUser'
 
@@ -192,6 +195,7 @@ ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 
