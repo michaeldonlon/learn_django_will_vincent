@@ -13,6 +13,8 @@ services:
     environment:
       - SECRET_KEY=&+y@(2660ma21l8e=b8znrhrvl3e30tcn3k8uo!uv)t(ug*u+@
       - DEBUG=1
+      - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51JCaneAX30piMu5AeJi4PsjN0fLsaEnh6SiAO0oYMz9mARcOPGY1u7HzjpjT0QcuYAX7cQEO1KE8XnwvOragML0R00ocxhyhnI
+      - STRIPE_TEST_SECRET_KEY=sk_test_51JCaneAX30piMu5AfOQkmbmBHohJGOSujKSgm9rS4zGOsr9WYtkeWME4Vj1hwWixSr73pT7rPiGzWI52W0aURlPl00Uic16o8w
   db:
     image: postgres:11
     environment:

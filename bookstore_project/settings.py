@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'books.apps.BooksConfig',
+    'orders.apps.OrdersConfig'
 ]
 
 MIDDLEWARE = [
@@ -208,3 +209,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 TIME_ZONE = 'Australia/Melbourne'
+
+# Stripe settings
+STRIPE_TEST_PUBLISHABLE_KEY=os.environ.get('STRIPE_TEST_PUBLISHABLE_KEY')
+STRIPE_TEST_SECRET_KEY=os.environ.get('STRIPE_TEST_SECRET_KEY')
