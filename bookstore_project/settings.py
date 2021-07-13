@@ -159,10 +159,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # My custom user model
 AUTH_USER_MODEL = 'users.CustomUser'
 
-# Both login and logout redirect back to homepage
-# LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ''' 
@@ -183,6 +179,7 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 AUTHENTICATION_BACKENDS = [
 #    'social_core.backends.github.GithubOAuth2',
@@ -220,3 +217,19 @@ STRIPE_TEST_SECRET_KEY=os.environ.get('STRIPE_TEST_SECRET_KEY')
 import socket
 hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
 INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
+
+ENVIRONMENT = os.environ.get('ENVIRONMENT', default='development')
+
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
+
+# production
+if ENVIRONMENT == 'production':
+    SECURE_BROWSER_XSS_FILTER = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 3600
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
