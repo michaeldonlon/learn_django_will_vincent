@@ -11,6 +11,7 @@ social-auth-app-django = "*"
 django-allauth = "==0.43.0"
 pillow = "==8.3.1"
 stripe = "==2.59.0"
+django-debug-toolbar = "==3.2.1"
 
 [dev-packages]
 
