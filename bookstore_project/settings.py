@@ -222,7 +222,7 @@ INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
 
 ENVIRONMENT = os.environ.get('ENVIRONMENT', default='development')
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['classique-chaise-18752.herokuapp.com', 'localhost', '127.0.0.1']
 
 # production
 if ENVIRONMENT == 'production':
@@ -235,6 +235,7 @@ if ENVIRONMENT == 'production':
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Heroku
 import dj_database_url
